@@ -9,7 +9,7 @@ This directory was not a Git repository during planning, so plans use `no-git-ba
 | Plan | Title | Priority | Effort | Depends on | Status |
 |------|-------|----------|--------|------------|--------|
 | 001 | Sanitize tax artifacts before implementation | P1 | M | - | DONE |
-| 002 | Build an executable Luzern tax MCP spike | P2 | L | 001 | TODO |
+| 002 | Build an executable Luzern tax MCP spike | P2 | L | 001 | DONE |
 
 Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) | REJECTED (with one-line rationale)
 

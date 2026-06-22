@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scantax xmlns="http://www.information-factory.com/xmlns/iffc/scantax/1-1"
+	xsi:schemaLocation="http://www.information-factory.com/xmlns/iffc/scantax/1-1 http://xmlns.information-factory.com/xmlns/fk2/scantax/scantax-1-1.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	formCounterType="group" formCounterStart="1" formGroup="1" formSequence="1"
+	fieldCounterType="bref" fieldCounterStart="0" fieldBref="0" fieldSeq="0" booleanSendType="NJ">
+
+	<interface fileVersion="1" typeSet="1" dateOfIssue="2023-06-13" manufacturer="08" canton="LU" purpose="1" taxYear="2024" taxType="LUnP2024" />
+	<subject taxIdentification="STES1_NeueAHVNr" name="STES1_AlleNamen" address="STES1_Strasse" city="STES1_Gemeinde" />
+
+	<formInfo identification="010" description="Steuererklärung: Natürliche Person" source="">
+		<!-- Hauptformular Seite 1 -->
+		<string source="STES1_persID" fref="11" seq="1" />
+		<string source="STES1_Gemeinde" fref="12" seq="1" />
+		<string source="STES1_NameSt" fref="13" seq="1" />
+		<string source="STES1_VornameSt" fref="13" seq="2" />
+		<string source="STES1_NameEf" fref="13" seq="3">
+			<condition>STES1_Verheiratet</condition>
+		</string>
+		<string source="STES1_VornameEf" fref="13" seq="4">
+			<condition>STES1_Verheiratet</condition>
+		</string>
+		<string source="STES1_Strasse" fref="13" seq="5" />
+		<string source="STES1_PLZ" fref="13" seq="7" />
+		<string source="STES1_Ort" fref="13" seq="8" />
+		<string source="STES1_NameVer" fref="14" seq="1" />
+		<string source="STES1_StrasseVer" fref="14" seq="2" />
+		<string source="STES1_PostfachVer" fref="14" seq="3" />
+		<string source="STES1_PlzOrtVer" fref="14" seq="4" />
+		<string source="STES1_TelefonVer" fref="14" seq="5" />
+		<date source="STES1_UnterjaehrigeSPflichtVon" fref="15" seq="1" />
+		<date source="STES1_UnterjaehrigeSPflichtBis" fref="16" seq="1" />
+
+		<date source="STES1_StGebDat" fref="20" seq="1" />
+		<string source="STES1_Zivilstand" fref="20" seq="2" />
+		<string source="STES1_StKonf" fref="20" seq="3" />
+
+		<boolean source="STES1_StSelbstaendigJa" fref="21" seq="1" />
+		<boolean source="STES1_StSelbstaendigNein" fref="21" seq="2" />
+
+		<date source="STES1_EfGebDat" fref="22" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</date>
+		<string source="STES1_VornameEf" fref="22" seq="2">
+			<condition>STES1_Verheiratet</condition>
+		</string>
+		<string source="STES1_EfKonf" fref="22" seq="3">
+			<condition>STES1_Verheiratet</condition>
+		</string>
+
+		<boolean source="STES1_EfSelbstaendigJa" fref="23" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</boolean>
+		<boolean source="STES1_EfSelbstaendigNein" fref="23" seq="2">
+			<condition>STES1_Verheiratet</condition>
+		</boolean>
+
+		<table source="childDetails">
+			<string source="childName" fref="30" seq="1" />
+			<date source="childDateOfBirth" fref="30" seq="2" />
+			<string source="childReligion" fref="30" seq="3" />
+			<boolean source="childInHouseholdYes" fref="30" seq="4" />
+			<boolean source="childInHouseholdNo" fref="30" seq="5" />
+			<string source="childEducationDescription" fref="30" seq="6" />
+			<date source="childEducationTo" fref="30" seq="7" />
+			<boolean source="childHasAlimonyYes" fref="30" seq="8" />
+			<boolean source="childHasAlimonyNo" fref="30" seq="9" />
+		</table>
+
+		<table source="STES1_ErwerbUnfPersonen">
+			<string source="STES1_4Name" fref="40" seq="1" />
+			<year source="STES1_4GebJahr" fref="40" seq="2" />
+			<boolean source="STES1_4ImHaushaltJa" fref="40" seq="3" >
+				<condition>STES1_4Name != null | STES1_4IBeitrag != null</condition>
+			</boolean>
+			<boolean source="STES1_4ImHaushaltNein" fref="40" seq="4" >
+				<condition>STES1_4Name != null | STES1_4IBeitrag != null</condition>
+			</boolean>
+			<string source="STES1_4IAdresse" fref="40" seq="5" />
+			<integer source="STES1_4IBeitrag" fref="40" seq="6" />
+		</table>
+
+		<boolean source="STES1_Check_5_1Ja" fref="51" seq="1" />
+		<boolean source="STES1_Check_5_1Nein" fref="51" seq="2" />
+		<boolean source="STES1_Check_5_2Ja" fref="52" seq="1" />
+		<boolean source="STES1_Check_5_2Nein" fref="52" seq="2" />
+
+		<table source="capitalBenefitPayments">
+			<integer source="capitalBenefitPaymentAmount" fref="54" seq="1" />
+			<date source="capitalBenefitPaymentDate" fref="54" seq="2" />
+			<string source="capitalBenefitPaymentDescription" fref="54" seq="3" />
+		</table>
+
+		<boolean source="STES1_Tarif" fref="60" seq="1" />
+		<boolean source="STES1_TarifVerheiratet" fref="61" seq="1" />
+		<boolean source="STES1_TarifAlleinstehendMit" fref="62" seq="1" />
+		<string source="STES1_GemeindeNr" fref="64" seq="1" />
+		<string source="STES1_NeueAHVNrBC" fref="65" seq="1" />
+		<!-- the following model ids are located on page 4 of the main form, but get specified here, because the ordering fits nicer that way -->
+		<boolean source="STES4_BeilPCSteuererkl" fref="70" seq="1" />
+		<boolean source="STES4_BeilWV" fref="71" seq="1" />
+		<integer source="STES4_BeilLohnausweise" fref="72" seq="1" />
+		<integer source="STES4_BeilBeschS3a" fref="73" seq="1" />
+		<boolean source="STES4_BeilBA" fref="74" seq="1" />
+		<boolean source="STES4_BeilSV" fref="75" seq="1" />
+		<boolean source="STES4_BeilLV" fref="76" seq="1" />
+		<boolean source="STES4_BeilUnterhaltsBeitr" fref="77" seq="1" />
+		<boolean source="STES4_BeilKrankheitskosten" fref="78" seq="1" />
+		<boolean source="STES4_BeilGeschAbschluss" fref="79" seq="1" />
+		<boolean source="STES4_BeilFragebogen" fref="80" seq="1" />
+		<string source="STES4_BeilFragebogenArt" fref="80" seq="2">
+			<condition>STES4_BeilFragebogen</condition>
+		</string>
+		<boolean source="STES4_BeilErlaeuterungen" fref="81" seq="1" />
+		<boolean source="STES4_BeilVollmacht" fref="82" seq="1" />
+		<boolean source="STES4_FragebogenSelbstaendig" fref="83" seq="1" />
+		<string source="STES4_Ort" fref="90" seq="1" />
+		<date source="STES4_Datum" fref="91" seq="1" />
+		<string source="STES4_TelefonPriv" fref="92" seq="1" />
+		<string source="STES4_TelefonGesch" fref="93" seq="1" />
+		<string source="STES4_Email" fref="94" seq="1" />
+		<string source="STES1_NameInf" fref="95" seq="1"/>
+		<string source="STES1_TelefonInf" fref="96" seq="1"/>
+		<string source="STES1_EmailInf" fref="97" seq="1"/>
+
+		<!-- Hauptformular Seite 2 -->
+		<integer source="STES2_SEPersGeselST" fref="118" seq="1" />
+		<integer source="STES2_SEPersGeselEF" fref="119" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="employedRevenueMainRevenuePartner1" fref="100" seq="1" />
+		<integer source="employedRevenueMainRevenuePartner2" fref="101" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="employedRevenueSidelineRevenuePartner1" fref="104" seq="1" />
+		<integer source="employedRevenueSidelineRevenuePartner2" fref="105" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STUSPrivat" fref="106" seq="1" />
+		<integer source="STES2_EFUSPrivat" fref="107" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STSEHaupt" fref="110" seq="1" />
+		<integer source="STES2_EFSEHaupt" fref="111" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STSENeben" fref="114" seq="1" />
+		<integer source="STES2_EFSENeben" fref="115" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STAHV_IV_Renten" fref="130" seq="1" />
+		<integer source="STES2_EFAHV_IV_Renten" fref="131" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STRenten" fref="132" seq="1" />
+		<reference source="STES2_STRentenProzent" fref="132" seq="2" />
+		<integer source="STES2_STResRenten" fref="132" seq="3" />
+		<integer source="STES2_EFRenten" fref="133" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<reference source="STES2_EFRentenProzent" fref="133" seq="2">
+			<condition>STES1_Verheiratet</condition>
+		</reference>
+		<integer source="STES2_EFResRenten" fref="133" seq="3">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STLeibrenten" fref="134" seq="1" />
+		<reference source="STES2_STLeibrentenProzent" fref="134" seq="2" />
+		<integer source="STES2_STResLeibrenten" fref="134" seq="3" />
+		<integer source="STES2_EFLeibrenten" fref="135" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<reference source="STES2_EFLeibrentenProzent" fref="135" seq="2">
+			<condition>STES1_Verheiratet</condition>
+		</reference>
+		<integer source="STES2_EFResLeibrenten" fref="135" seq="3">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STUebRenten" fref="136" seq="1" />
+		<integer source="STES2_EFUebRenten" fref="137" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_STErwerbAusfall" fref="140" seq="1" />
+		<integer source="STES2_EFErwerbAusfall" fref="141" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES2_VonAusglKasse" fref="145" seq="1" />
+		<integer source="WVS3_TotalErtrag" fref="150" seq="1" />
+		<integer source="STES2_UB_TotErhaltZahlungen" fref="160" seq="1" />
+		<integer source="STES2_UB_TotErhaltAlimente" fref="161" seq="1" />
+		<integer source="revenueRestRevenueInheritanceEtc" fref="164" seq="1" />
+		<integer source="STES2_WeitereBetrag" fref="166" seq="1" />
+		<string source="STES2_WeitereBez" fref="166" seq="2" />
+		<integer source="STES2_KapAbfindJahre" fref="170" seq="1" />
+		<integer source="STES2_KapAbfindBetrag" fref="170" seq="2" />
+		<integer source="STES2_WohnrechtBetrag" fref="178" seq="1" />
+		<string source="STES2_WohnrechtName" fref="178" seq="2" />
+		<string source="STES2_WohnrechtAdresse" fref="178" seq="3" />
+		<string source="STES2_WohnrechtOrt" fref="178" seq="4" />
+		<integer source="LIEGZ_UebertragSTES2" fref="190" seq="1" />
+		<integer source="STES2_TotalEinkuenfte" fref="199" seq="1" />
+		<integer source="STES2_SchwarzArbeit" fref="199" seq="2" />
+
+		<!-- Hauptformular Seite 3 -->
+		<integer source="BAST_TotBerufsauslagen" fref="238" seq="1" />
+		<integer source="BAEF_TotBerufsauslagen" fref="239" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="jobOrientedFurtherEducationCostsP1" fref="248" seq="1" />
+		<integer source="jobOrientedFurtherEducationCostsP2" fref="249" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="jobOrientedFurtherEducationCostsTotal" fref="250" seq="1" />
+		<integer source="STES3_SchuldZinsSumme" fref="252" seq="1" />
+		<integer source="UB_TotGeleiZahlungen" fref="254" seq="1" />
+		<integer source="UB_TotGeleiAlimente" fref="255" seq="1" />
+		<integer source="paymentPensionDeduction" fref="256" seq="1" />
+		<string source="STES3_Wohnrecht" fref="258" seq="1" />
+		<integer source="STES3_WohnrechtBetrag" fref="258" seq="2" />
+		<integer source="STES3_SelbstVorsorgeST" fref="260" seq="1" />
+		<integer source="STES3_SelbstVorsorgeEF" fref="261" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="VB_CAbzug" fref="270" seq="1" />
+		<integer source="STES3_STBeit2SaeuleEinkauf" fref="280" seq="1" />
+		<integer source="STES3_STBeitrag2Saeule" fref="280" seq="2" />
+		<integer source="STES3_EFBeit2SaeuleEinkauf" fref="282" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES3_EFBeitrag2Saeule" fref="282" seq="2">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES3_STAHVBeitr" fref="284" seq="1" />
+		<integer source="STES3_EFAHVBeitr" fref="285" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES3_AHVBeitr" fref="285" seq="2" />
+		<integer source="STES3_GeschVerluste" fref="286" seq="1" />
+		<integer source="STES3_TotalAbzuege" fref="299" seq="1" />
+		<integer source="STES3_NettoEinkommen" fref="310" seq="1" />
+		<integer source="KU1_Total" fref="320" seq="1" />
+		<integer source="deductionCharity" fref="324" seq="1" />
+		<integer source="furtherDeductionPoliticalPartyDeductibleAmountCantonal" fref="325" seq="1" />
+		<integer source="furtherDeductionPoliticalPartyDeductibleAmountFederal" fref="325" seq="2" />
+		<integer source="STES3_SonderAbzug" fref="326" seq="1" />
+		<integer source="STES3_340Betrag" fref="340" seq="2" />
+		<float source="STES3_350AnzKinder" fref="350" seq="1" />
+		<integer source="STES3_350Betrag" fref="350" seq="2" />
+		<float source="STES3_351AnzKinder" fref="351" seq="1" />
+		<integer source="STES3_351Betrag" fref="351" seq="2" />
+		<float source="STES3_352AnzKinder" fref="352" seq="1" />
+		<integer source="STES3_352Betrag" fref="352" seq="2" />
+		<integer source="STES3_360Betrag" fref="353" seq="2" />
+		<integer source="FK_TotalFremdKostenBund" fref="353" seq="3" />
+		<integer source="STES3_370AnzKinder" fref="354" seq="1" />
+		<integer source="STES3_370Betrag" fref="354" seq="2" />
+		<float source="STES3_353AnzKinder" fref="355" seq="1" />
+		<integer source="STES3_353Betrag" fref="355" seq="2" />
+		<integer source="STES3_SteuerbaresEinkommen" fref="380" seq="1" />
+		<boolean source="STES3_EinkomVeraendErwartet" fref="381" seq="1" />
+		<integer source="STES3_VorausSichtEinkommen" fref="381" seq="2">
+			<condition>STES3_EinkomVeraendErwartet</condition>
+		</integer>
+
+		<!-- Hauptformular Seite 4 -->
+		<integer source="WVS3_TotalSteuerwert" fref="400" seq="1" />
+		<integer source="movablePropertyCashValue" fref="404" seq="1" />
+		<table source="movablePropertyLifeInsurances">
+			<string source="lifeInsuranceCompany" fref="410" seq="1" />
+			<year source="lifeInsuranceFixtureYear" fref="410" seq="2" />
+			<year source="lifeInsuranceExpirationYear" fref="410" seq="3" />
+			<integer source="lifeInsuranceInsuranceValue" fref="410" seq="4" />
+			<integer source="lifeInsuranceFiscalValue" fref="410" seq="5" />
+		</table>
+		<integer source="moveablePropertyLifeInsurancesTotal" fref="411" seq="1" />
+		<table source="movablePropertyVehicles">
+			<string source="vehicleDescription" fref="412" seq="1" />
+			<year source="vehicleYear" fref="412" seq="3" />
+			<integer source="vehiclePurchasePrice" fref="412" seq="2" />
+		</table>
+		<integer source="movablePropertyVehiclesTotal" fref="413" seq="1" />
+		<integer source="assetMovablePropertyHeritageEtcFiscalValue" fref="414" seq="1" />
+		<string source="movablePropertyFreeText" fref="416" seq="1" />
+		<integer source="movablePropertyFreeTextAmount" fref="416" seq="2" />
+		<integer source="LIEGZ_TotalSteuerwerte" fref="420" seq="1" />
+		<integer source="STES4_STTotBeweglichesVer" fref="430" seq="1" />
+		<integer source="STES4_EFTotBeweglichesVer" fref="431" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES4_STVerAnteilePersGesel" fref="434" seq="1" />
+		<integer source="STES4_EFVerAnteilePersGesel" fref="435" seq="1">
+			<condition>STES1_Verheiratet</condition>
+		</integer>
+		<integer source="STES4_TotalVermoegenswerte" fref="450" seq="1" />
+		<integer source="totalAmountLiabilities" fref="460" seq="1" />
+		<integer source="STES4_Reinvermoegen" fref="470" seq="1" />
+		<integer source="STES4_SteuFreiVerheiratet" fref="472" seq="1" />
+		<integer source="STES4_SteuFreiUebrige" fref="473" seq="1" />
+		<integer source="STES4_SteuFreiProKind" fref="474" seq="1" />
+		<integer source="STES4_SteuerbaresVermoegen" fref="480" seq="1" />
+	</formInfo>
+
+	<!-- formset L -->
+	<formInfo identification="111" description="Liegenschaften" source="">
+		<table source="LIEGZ_Table" fieldCounterStart="1">
+			<string source="LIEG_GMGFs" fref="21" seq="1" />
+			<string source="LIEG00_Gemeinde" fref="21" seq="2" />
+			<string source="LIEG00_GemeindeGebiet" fref="21" seq="9" />
+			<string source="LIEG_Kantone" fref="21" seq="3" />
+			<string source="LIEG00_GrundNr" fref="21" seq="4" />
+			<integer source="LIEG_Ertraege" fref="21" seq="5" />
+			<integer source="LIEG_Pauschalabzuege" fref="21" seq="6" />
+			<integer source="LIEG_EffKosten" fref="21" seq="7" />
+			<integer source="LIEG_Steuerwerte" fref="21" seq="8" />
+		</table>
+		<integer source="LIEGZ_TotalPauschalabzuege" fref="22" seq="1" />
+		<integer source="LIEGZ_TotalEffKosten" fref="22" seq="2" />
+		<integer source="LIEGZ_TotalSteuerwerte" fref="22" seq="3" />
+		<integer source="LIEGZ_TotalErtraege" fref="23" seq="1" />
+		<integer source="LIEGZ_TotUnterhalt" fref="23" seq="2" />
+		<integer source="LIEGZ_TotSteuerwertGM" fref="24" seq="1" />
+		<integer source="LIEGZ_TotSteuerwertGF" fref="25" seq="1" />
+		<integer source="LIEGZ_UebertragSTES2" fref="26" seq="1" />
+		<integer source="LIEGZ_TotErtraegeNettoGM" fref="27" seq="1" />
+		<integer source="LIEGZ_TotErtraegeNettoGF" fref="28" seq="1" />
+	</formInfo>
+
+	<!-- formset L -->
+	<formInfoList source="LIEGZ_Table">
+		<formInfo identification="114" description="Beiblatt zum Liegenschaftsverzeichnis" source="">
+			<string source="LIEG_GMGFs" fref="15" seq="1" />
+			<integer source="LIEG00_LiegNr" fref="16" seq="1" />
+			<boolean source="LIEG00_Vordruck" fref="17" seq="1" />
+			<string source="LIEG00_Gemeinde" fref="18" seq="1" />
+			<string source="LIEG00_GrundNr" fref="19" seq="1" />
+			<string source="LIEG00_Adresse" fref="20" seq="1" />
+			<year source="LIEG00_Schatzungsjahr" fref="21" seq="1" />
+			<year source="LIEG00_Baujahr" fref="22" seq="1" />
+			<string source="LIEG00_Kanton_FORM" fref="23" seq="1" />
+			<date source="LIEG00_Erwerbsdatum" fref="24" seq="1" />
+			<integer source="LIEG00_ErwerbsPreis" fref="24" seq="2"/>
+			<string source="LIEG00_LiegArt_FORM" fref="25" seq="1" />
+			<date source="LIEG00_Veraeusserungsdatum" fref="26" seq="1" />
+			<integer source="LIEG00_VeraeusserungsPreis" fref="26" seq="2" />
+			<boolean source="LIEG00_EigeneNutzungBC" fref="27" seq="1" />
+			<boolean source="LIEG00_AndereNutzungBC" fref="28" seq="1" />
+			<integer source="LIEG00_MiteigentumProzent" fref="29" seq="1" />
+			<string source="LIEG00_GemeindeGebiet" fref="30" seq="1" />
+			<integer source="LIEG00_Mietwert1" fref="31" seq="1" />
+			<float source="LIEG00_Mietwertansatz1" fref="31" seq="2" minFractionDigits="1" maxFractionDigits="1"/>
+			<integer source="LIEG00_Mietwert1Betrag" fref="31" seq="3" />
+			<integer source="LIEG00_Mietwert2" fref="32" seq="1" />
+			<float source="LIEG00_Mietwertansatz2" fref="32" seq="2" minFractionDigits="1" maxFractionDigits="1"/>
+			<integer source="LIEG00_Mietwert2Betrag" fref="32" seq="3" />
+			<integer source="LIEG00_VermietetBetrag" fref="33" seq="1" />
+			<integer source="LIEG00_VermietetAnzZimmer" fref="33" seq="2">
+				<condition>LIEG00_VermietetGanz</condition>
+			</integer>
+			<boolean source="LIEG00_VermietetGanz" fref="33" seq="3" />
+			<integer source="LIEG00_VermietetAnzWochen" fref="33" seq="4" />
+			<integer source="LIEG00_EigeneRaeumeBetrag" fref="34" seq="1" />
+<!-- 			<string source="" fref="35" seq="1" /> -->
+			<integer source="LIEG00_LeistungenDritterBetrag" fref="35" seq="2" />
+			<integer source="LIEG00_ErtraegeBetrag" fref="36" seq="1" />
+			<integer source="LIEG00_Zwischentotal" fref="37" seq="1" />
+			<integer source="LIEG00_ReduktionMietwert" fref="38" seq="1" />
+			<integer source="LIEG00_TotalErtraege" fref="39" seq="1" />
+			<boolean source="LIEG00_PauschalAbzugJa" fref="40" seq="1" />
+			<boolean source="LIEG00_Pauschal10" fref="40" seq="2" />
+			<boolean source="LIEG00_Pauschal20" fref="40" seq="3" />
+			<integer source="LIEG00_PauschalabzugBetrag" fref="40" seq="5" />
+			<boolean source="LIEG00_PauschalAbzugNein" fref="41" seq="1" />
+			<integer source="LIEG00_TotalKosten" fref="44" seq="1" />
+			<integer source="LIEG00_Katasterwert" fref="50" seq="1" />
+			<float source="LIEG00_AnteilEigeneProzent" fref="51" seq="1" />
+			<integer source="LIEG00_AnteilEigeneFr" fref="51" seq="2" />
+			<integer source="LIEG00_AnteilEigeneBetrag" fref="51" seq="3" />
+			<float source="LIEG00_AnteilUebrigeProzent" fref="52" seq="1" />
+			<integer source="LIEG00_AnteilUebrigeFr" fref="52" seq="2" />
+			<integer source="LIEG00_AnteilUebrigeFr" fref="52" seq="3" />
+			<integer source="LIEG00_TotalSteuerwert" fref="53" seq="1" />
+			<integer source="LIEG00_LandWirtPunktzahl" fref="60" seq="1" />
+			<integer source="LIEG00_LandWirtFR" fref="60" seq="2" />
+			<integer source="LIEG00_LandWirtRaumeinheit" fref="60" seq="3" />
+			<integer source="LIEG00_LandWirtTotal" fref="60" seq="4" />
+			<integer source="LIEG00_Mietwert3Betrag" fref="63" seq="1" />
+		</formInfo>
+	</formInfoList>
+
+	<!-- formset B -->
+	<formInfo identification="105" description="Berufsauslagen" source="">
+		<integer source="BAST_OEVerkBetrTot" fref="202" seq="1" />
+		<integer source="BAST_Velo" fref="204" seq="1" />
+		<integer source="BAST_GenehmKosten" fref="206" seq="1" />
+		<string source="BAST_VerpflArbeitsort1" fref="212" seq="1" />
+		<integer source="BAST_VerpflAnzTage1" fref="212" seq="2" />
+		<integer source="BAST_VerpfTot1" fref="212" seq="3" />
+		<string source="BAST_VerpflArbeitsort2" fref="214" seq="1" />
+		<integer source="BAST_VerpflAnzTage2" fref="214" seq="2" />
+		<integer source="BAST_VerpfTot2" fref="214" seq="3" />
+		<integer source="BAST_VerpfSchichtTage" fref="216" seq="1" />
+		<integer source="BAST_VerpfSchichtTot" fref="216" seq="2" />
+		<integer source="BAST_Erwerbsausfall" fref="220" seq="1" />
+		<integer source="BAST_UebBerufskosten" fref="220" seq="2" />
+		<integer source="BAST_WATotUnterkunft" fref="228" seq="1" />
+		<integer source="BAST_WATotVerpflegung" fref="230" seq="1" />
+		<integer source="BAST_PauschNebenerw" fref="236" seq="1" />
+		<integer source="BAST_TotBerufsauslagen" fref="238" seq="1" />
+
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP1NoPublicTransport" fref="250" seq="1" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP1TimeSaving" fref="250" seq="2" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP1JobRequirement" fref="250" seq="3" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP1MedicalReasons" fref="250" seq="4" />
+
+		<boolean source="BAST_CBGeschAutoNein" fref="252" seq="1">
+			<condition>BAST_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAST_CBGeschAutoJa" fref="252" seq="2">
+			<condition>BAST_TotBerufsauslagen != null</condition>
+		</boolean>
+		<string source="BAST_AutoMarke" fref="252" seq="3" />
+		<integer source="BAST_AutoKatPreis" fref="252" seq="4" />
+		<integer source="BAST_AutoPrivAnteil" fref="252" seq="5" />
+		<table source="BAST_FahrzeugT">
+			<condition>BAST_TotPrivFahrzeugBetr != null</condition>
+			<boolean source="BAST_FahrzeugArtAuto" fref="268" seq="1" />
+			<boolean source="BAST_FahrzeugArtMoto" fref="268" seq="2" />
+			<boolean source="BAST_Geleast" fref="268" seq="3" />
+			<string source="BAST_ArbeitsortL" fref="268" seq="4" />
+			<integer source="BAST_AnzTageL" fref="268" seq="5" />
+			<integer source="BAST_AnzKmL" fref="268" seq="6" />
+			<integer source="BAST_FahrtenProTagL" fref="268" seq="7" />
+			<integer source="BAST_TotKmL" fref="268" seq="8" />
+		</table>
+		<integer source="BAST_TotalKm" fref="270" seq="1" />
+		<integer source="BAST_AutoKm" fref="272" seq="1" />
+		<integer source="BAST_BetAutoKm" fref="272" seq="2" />
+		<integer source="BAST_MotorradKm" fref="278" seq="1" />
+		<integer source="BAST_BetMororradKm" fref="278" seq="2" />
+		<integer source="BAST_TotPrivFahrzeugBetr" fref="280" seq="1" />
+		<boolean source="BAST_CBAuto" fref="282" seq="1">
+			<condition>BAST_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAST_CBMoto" fref="282" seq="2">
+			<condition>BAST_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAST_CBGeleast" fref="282" seq="3">
+			<condition>BAST_TotBerufsauslagen != null</condition>
+		</boolean>
+		<integer source="BAST_TotFahrkostenKanton" fref="290" seq="1" />
+	</formInfo>
+
+	<formInfo identification="107" description="Berufsauslagen Frau" source="">
+		<integer source="BAEF_OEVerkBetrTot" fref="203" seq="1" />
+		<integer source="BAEF_Velo" fref="205" seq="1" />
+		<integer source="BAEF_GenehmKosten" fref="207" seq="1" />
+		<string source="BAEF_VerpflArbeitsort1" fref="213" seq="1" />
+		<integer source="BAEF_VerpflAnzTage1" fref="213" seq="2" />
+		<integer source="BAEF_VerpfTot1" fref="213" seq="3" />
+		<string source="BAEF_VerpflArbeitsort2" fref="215" seq="1" />
+		<integer source="BAEF_VerpflAnzTage2" fref="215" seq="2" />
+		<integer source="BAEF_VerpfTot2" fref="215" seq="3" />
+		<integer source="BAEF_VerpfSchichtTage" fref="217" seq="1" />
+		<integer source="BAEF_VerpfSchichtTot" fref="217" seq="2" />
+		<integer source="BAEF_Erwerbsausfall" fref="221" seq="1" />
+		<integer source="BAEF_UebBerufskosten" fref="221" seq="2" />
+		<integer source="BAEF_WATotUnterkunft" fref="229" seq="1" />
+		<integer source="BAEF_WATotVerpflegung" fref="231" seq="1" />
+		<integer source="BAEF_PauschNebenerw" fref="237" seq="1" />
+		<integer source="BAEF_TotBerufsauslagen" fref="239" seq="1" />
+
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP2NoPublicTransport" fref="251" seq="1" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP2TimeSaving" fref="251" seq="2" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP2JobRequirement" fref="251" seq="3" />
+		<boolean source="jobExpensesReasonPrivateMotorvehicleP2MedicalReasons" fref="251" seq="4" />
+
+		<boolean source="BAEF_CBGeschAutoNein" fref="253" seq="1">
+			<condition>BAEF_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAEF_CBGeschAutoJa" fref="253" seq="2">
+			<condition>BAEF_TotBerufsauslagen != null</condition>
+		</boolean>
+		<string source="BAEF_AutoMarke" fref="253" seq="3" />
+		<integer source="BAEF_AutoKatPreis" fref="253" seq="4" />
+		<integer source="BAEF_AutoPrivAnteil" fref="253" seq="5" />
+		<table source="BAEF_FahrzeugT">
+			<condition>BAEF_TotPrivFahrzeugBetr != null</condition>
+			<boolean source="BAEF_FahrzeugArtAuto" fref="269" seq="1" />
+			<boolean source="BAEF_FahrzeugArtMoto" fref="269" seq="2" />
+			<boolean source="BAEF_Geleast" fref="269" seq="3" />
+			<string source="BAEF_ArbeitsortL" fref="269" seq="4" />
+			<integer source="BAEF_AnzTageL" fref="269" seq="5" />
+			<integer source="BAEF_AnzKmL" fref="269" seq="6" />
+			<integer source="BAEF_FahrtenProTagL" fref="269" seq="7" />
+			<integer source="BAEF_TotKmL" fref="269" seq="8" />
+		</table>
+		<integer source="BAEF_TotalKm" fref="271" seq="1" />
+		<integer source="BAEF_AutoKm" fref="273" seq="1" />
+		<integer source="BAEF_BetAutoKm" fref="273" seq="2" />
+		<integer source="BAEF_MotorradKm" fref="279" seq="1" />
+		<integer source="BAEF_BetMororradKm" fref="279" seq="2" />
+		<integer source="BAEF_TotPrivFahrzeugBetr" fref="281" seq="1" />
+		<boolean source="BAEF_CBAuto" fref="283" seq="1">
+			<condition>BAEF_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAEF_CBMoto" fref="283" seq="2">
+			<condition>BAEF_TotBerufsauslagen != null</condition>
+		</boolean>
+		<boolean source="BAEF_CBGeleast" fref="283" seq="3">
+			<condition>BAEF_TotBerufsauslagen != null</condition>
+		</boolean>
+		<integer source="BAEF_TotFahrkostenKanton" fref="291" seq="1" />
+	</formInfo>
+
+	<!-- formset UB -->
+	<formInfo identification="150" description="Alimente" source="">
+		<boolean source="UB_BevorschusstJa" fref="40" seq="1">
+			<condition>UB_Ausgefuellt</condition>
+		</boolean>
+		<boolean source="UB_BevorschusstNein" fref="40" seq="2">
+			<condition>UB_Ausgefuellt</condition>
+		</boolean>
+		<string source="UB_Kind1Vorname" fref="41" seq="1" />
+		<date source="UB_Kind1Geboren" fref="41" seq="2" />
+		<integer source="UB_Kind1Beitr1" fref="42" seq="1" />
+		<date source="UB_Kind1Beitr1Vom" fref="42" seq="2" />
+		<date source="UB_Kind1Beitr1Bis" fref="42" seq="3" />
+		<integer source="UB_Kind1Beitr1Erhalt" fref="42" seq="4" />
+		<integer source="UB_Kind1Beitr1Gelei" fref="42" seq="5" />
+		<integer source="UB_Kind1Beitr2" fref="43" seq="1" />
+		<date source="UB_Kind1Beitr2Vom" fref="43" seq="2" />
+		<date source="UB_Kind1Beitr2Bis" fref="43" seq="3" />
+		<integer source="UB_Kind1Beitr2Erhalt" fref="43" seq="4" />
+		<integer source="UB_Kind1Beitr2Gelei" fref="43" seq="5" />
+		<string source="UB_Kind2Vorname" fref="44" seq="1" />
+		<date source="UB_Kind2Geboren" fref="44" seq="2" />
+		<integer source="UB_Kind2Beitr1" fref="45" seq="1" />
+		<date source="UB_Kind2Beitr1Vom" fref="45" seq="2" />
+		<date source="UB_Kind2Beitr1Bis" fref="45" seq="3" />
+		<integer source="UB_Kind2Beitr1Erhalt" fref="45" seq="4" />
+		<integer source="UB_Kind2Beitr1Gelei" fref="45" seq="5" />
+		<integer source="UB_Kind2Beitr2" fref="46" seq="1" />
+		<date source="UB_Kind2Beitr2Vom" fref="46" seq="2" />
+		<date source="UB_Kind2Beitr2Bis" fref="46" seq="3" />
+		<integer source="UB_Kind2Beitr2Erhalt" fref="46" seq="4" />
+		<integer source="UB_Kind2Beitr2Gelei" fref="46" seq="5" />
+		<string source="UB_Kind3Vorname" fref="47" seq="1" />
+		<date source="UB_Kind3Geboren" fref="47" seq="2" />
+		<integer source="UB_Kind3Beitr1" fref="48" seq="1" />
+		<date source="UB_Kind3Beitr1Vom" fref="48" seq="2" />
+		<date source="UB_Kind3Beitr1Bis" fref="48" seq="3" />
+		<integer source="UB_Kind3Beitr1Erhalt" fref="48" seq="4" />
+		<integer source="UB_Kind3Beitr1Gelei" fref="48" seq="5" />
+		<integer source="UB_Kind3Beitr2" fref="49" seq="1" />
+		<date source="UB_Kind3Beitr2Vom" fref="49" seq="2" />
+		<date source="UB_Kind3Beitr2Bis" fref="49" seq="3" />
+		<integer source="UB_Kind3Beitr2Erhalt" fref="49" seq="4" />
+		<integer source="UB_Kind3Beitr2Gelei" fref="49" seq="5" />
+	</formInfo>
+
+	<!-- formset FK -->
+	<formInfo identification="160" description="Drittbetreuungskosten" source="">
+		<integer source="FK_TotalBerufKostenKanton" fref="10" seq="1" />
+		<integer source="FK_TotalBerufKostenBund" fref="11" seq="1" />
+		<integer source="FK_TotalKrankKostenKanton" fref="20" seq="1" />
+		<integer source="FK_TotalKrankKostenBund" fref="21" seq="1" />
+	</formInfo>
+
+	<!-- formset SV -->
+	<formInfo identification="200" description="Schuldenverzeichnis" source="">
+		<table source="privateLiabilities">
+			<string source="privateLiabilitiesIdentification" fref="20" seq="1" />
+			<integer source="privateLiabilitiesLiability" fref="20" seq="2" />
+			<float source="privateLiabilitiesLiabilityInterestRate" fref="20" seq="3" minFractionDigits="3" maxFractionDigits="3"/>
+			<integer source="privateLiabilitiesLiabilityInterest" fref="20" seq="4" />
+		</table>
+		<integer source="totalPrivateLiabilities" fref="21" seq="1" />
+		<integer source="totalPrivateLiabilitiesInterest" fref="21" seq="2" />
+		<table source="businessLiabilities">
+			<string source="businessLiabilitiesIdentification" fref="30" seq="1" />
+			<string source="businessLiabilitiesLiabilityOwnerForm" fref="30" seq="2" />
+			<integer source="businessLiabilitiesLiability" fref="30" seq="3" />
+			<float source="businessLiabilitiesLiabilityInterestRate" fref="30" seq="4" minFractionDigits="3" maxFractionDigits="3"/>
+			<integer source="businessLiabilitiesLiabilityInterest" fref="30" seq="5" />
+		</table>
+		<integer source="totalBusinessLiabilitiesP1" fref="31" seq="1" />
+		<integer source="totalBusinessLiabilitiesInterestP1" fref="31" seq="2" />
+		<integer source="totalBusinessLiabilitiesP2" fref="32" seq="1" />
+		<integer source="totalBusinessLiabilitiesInterestP2" fref="32" seq="2" />
+		<integer source="totalBusinessLiabilities" fref="33" seq="1" />
+		<integer source="totalBusinessLiabilitiesInterest" fref="33" seq="2" />
+		<integer source="totalAmountLiabilities" fref="34" seq="1" />
+		<integer source="totalAmountLiabilitiesInterest" fref="34" seq="2" />
+	</formInfo>
+
+	<!-- formset VB -->
+	<formInfo identification="163" description="Abzug für Versicherungsprämien" source="">
+		<integer source="VB_BetrKrankUnfallVers" fref="20" seq="1" />
+		<integer source="VB_PrivKrankVersBetr" fref="21" seq="1" />
+		<integer source="VB_PrivUnfallVersBetr" fref="22" seq="1" />
+		<integer source="VB_LebensVersBetr" fref="23" seq="1" />
+		<integer source="VB_Sparzinsen" fref="24" seq="1" />
+		<integer source="VB_ZwischenTot" fref="25" seq="1" />
+		<integer source="VB_PraemVerbilligung" fref="26" seq="1" />
+		<integer source="VB_TotPersonenVers" fref="27" seq="1" />
+
+		<integer source="VB_AbzugAMitBeitraegen" fref="30" seq="1" />
+		<integer source="VB_AbzugAOhneBeitraegen" fref="31" seq="1" />
+		<integer source="VB_AbzugBMitBeitraegen" fref="32" seq="1" />
+		<integer source="VB_AbzugBOhneBeitraegen" fref="33" seq="1" />
+		<integer source="VB_AbzugC" fref="34" seq="1" />
+		<integer source="VB_TotAbzuege" fref="35" seq="1" />
+	</formInfo>
+
+	<!-- formset KU -->
+	<formInfo identification="180" description="Ungedeckte Krankheitskosten" source="">
+		<string source="KU1_Name1" fref="15" seq="1" />
+		<string source="KU1_Vorname1" fref="15" seq="2" />
+		<date source="KU1_GebDat1" fref="15" seq="3" />
+		<integer source="KU1_1AnzahlTage1" fref="15" seq="4" />
+		<string source="KU1_Name2" fref="16" seq="1" />
+		<string source="KU1_Vorname2" fref="16" seq="2" />
+		<date source="KU1_GebDat2" fref="16" seq="3" />
+		<integer source="KU1_1AnzahlTage2" fref="16" seq="4" />
+		<integer source="KU1_1Selbstbehalt" fref="20" seq="1" />
+		<integer source="KU1_2AerztlicheVerordnung" fref="20" seq="2" />
+		<integer source="KU1_5Zahnarztkosten" fref="21" seq="1" />
+		<integer source="KU1_6Brillen" fref="22" seq="1" />
+		<integer source="KU1_7ZoeliakiePauschal" fref="23" seq="1" />
+		<integer source="KU1_7DiaetkostenRechnen" fref="23" seq="2" />
+		<integer source="KU1_3AuswaertigerAufenthalt" fref="24" seq="1" />
+		<integer source="KU1_4HeimaufenthaltPartner1" fref="24" seq="2" />
+		<integer source="KU1_4HeimaufenthaltPartner2" fref="24" seq="3" />
+		<integer source="KU1_8WeitereTotal" fref="25" seq="2" />
+		<integer source="KU1_ATotalKrankKosten" fref="26" seq="1" />
+		<integer source="KU1_13AbzugSelbstbehalt" fref="27" seq="1" />
+		<integer source="KU1_ATotalKrankAbzug" fref="28" seq="1" />
+		<integer source="KU1_LeichterGrad" fref="30" seq="1" />
+		<integer source="KU1_MittlererGrad" fref="30" seq="2" />
+		<integer source="KU1_SchwererGrad" fref="30" seq="3" />
+		<integer source="KU1_Gehoerlosigkeit" fref="30" seq="4" />
+		<integer source="KU1_Nierenkrankheit" fref="30" seq="5" />
+		<integer source="KU1_20Pauschalabzug" fref="30" seq="6" />
+		<integer source="KU1_14BehindIV" fref="31" seq="1" />
+		<integer source="KU1_15BehindHeimaufenthalt1" fref="32" seq="1" />
+		<integer source="KU1_15BehindHeimaufenthalt2" fref="32" seq="2" />
+		<integer source="KU1_BTotalBehindKosten" fref="33" seq="1" />
+		<integer source="KU1_9Krankenkasse" fref="40" seq="1" />
+		<integer source="KU1_16Hilflosenentschaedigung" fref="41" seq="1" />
+		<integer source="KU1_10ErgLeistungen" fref="42" seq="1" />
+		<integer source="KU1_11Haftpflichtrecht" fref="43" seq="1" />
+		<integer source="KU1_12WeitereTotal" fref="44" seq="1" />
+		<integer source="KU1_ATotalUngedeckteKrankKosten" fref="44" seq="2" />
+		<integer source="KU1_17ErgLeistungen" fref="45" seq="1" />
+		<integer source="KU1_18LebenshaltungHeimaufenthalt" fref="46" seq="1" />
+		<integer source="KU1_BTotalEffektBeKosten" fref="47" seq="1" />
+		<integer source="KU1_19WeitereTotal" fref="48" seq="1" />
+	</formInfo>
+
+	<!-- formset SE -->
+	<formInfoList source="selfemploymentBusinessTable">
+		<formInfo identification="329" description="Fragebogen für Selbständigerwerbende mit kaufmännische Buchhaltung" source="">
+			<!-- page 1 header -->
+			<boolean source="SES100_BuchhKaufmJa" fref="8" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<string source="SES100_OrtGeschaeft" fref="10" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Name" fref="11" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Vorname" fref="12" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Firma" fref="13" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Branche" fref="14" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<boolean source="SES100_SEAufgenommenJa" fref="16" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES100_SEAufgenommenNein" fref="16" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<date source="SES100_DatumSEAufgenommen" fref="16" seq="3">
+				<condition>SES100_BuchhKaufm</condition>
+			</date>
+			<date source="SES100_DatumSEAufgegeben" fref="16" seq="4">
+				<condition>SES100_BuchhKaufm</condition>
+			</date>
+			<boolean source="SES100_ErhebMitarbeitJa" fref="17" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES100_ErhebMitarbeitNein" fref="17" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<!-- page 1 -->
+			<integer source="SES100_Reingewinn" fref="100" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Eigenleistung" fref="101" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Kapitalgewinne" fref="102" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_VorsorgeEigen" fref="103" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Naturalbezuege" fref="104" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES100_MarkeFZ1" fref="105" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES100_PreisFZ1" fref="105" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES100_MarkeFZ2" fref="106" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES100_PreisFZ2" fref="106" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Privatanteil" fref="107" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_PrivatanteilVerbucht" fref="108" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_TotalFZKosten" fref="108" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_UnkostenAndere" fref="109" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_UnkostenAndereVerbucht" fref="110" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_TotalUnkostenAndere" fref="110" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Eigensalaer" fref="111" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_AuslagenPrivat" fref="112" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_EinkommenSteuer" fref="113" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_Reserven" fref="114" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES100_ErtraegeAndereArt" fref="115" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES100_ErtraegeAndere" fref="115" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES100_AufwaendeAndereArt" fref="116" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES100_AufwaendeAndere" fref="116" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES100_TotalEinkommenInkl" fref="117" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<!-- page 2 -->
+			<integer source="SES200_TotalEinkommenInklUebertrag" fref="118" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_ZinsertraegeVerbucht" fref="119" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_TotalEinkommenOhne" fref="120" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_AbzugBeteiligungen" fref="121" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_RealStilleReservVorjahr" fref="122" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_Liquidationsgewinn" fref="123" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES200_EinkommenSteuerbar" fref="124" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</integer>
+			<boolean source="SES200_JahresrechungMit" fref="130" seq="1">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES200_PrivatkontoMit" fref="130" seq="2">
+				<condition>SES100_BuchhKaufm</condition>
+			</boolean>
+		</formInfo>
+		<formInfo identification="328" description="Fragebogen für Selbständigerwerbende ohne kaufmännische Buchhaltung" source="">
+			<!-- page 3 header -->
+			<boolean source="SES100_BuchhKaufmNein" fref="9" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<string source="SES100_OrtGeschaeft" fref="10" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Name" fref="11" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Vorname" fref="12" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Firma" fref="13" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<string source="SES100_Branche" fref="14" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<boolean source="SES100_SEAufgenommenJa" fref="16" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES100_SEAufgenommenNein" fref="16" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<date source="SES100_DatumSEAufgenommen" fref="16" seq="3">
+				<condition>!SES100_BuchhKaufm</condition>
+			</date>
+			<date source="SES100_DatumSEAufgegeben" fref="16" seq="4">
+				<condition>!SES100_BuchhKaufm</condition>
+			</date>
+			<boolean source="SES100_ErhebMitarbeitNein" fref="17" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES100_ErhebMitarbeitJa" fref="17" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<!-- page 3 -->
+			<integer source="SES300_EinnahmenWaren" fref="200" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_Eigenleistung" fref="201" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_NaturalbezuegeAnz" fref="202" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_NaturalbezuegeAnzKinder" fref="202" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_Naturalbezuege" fref="202" seq="3">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_Honorare" fref="203" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES300_AndereErtraegeArt" fref="204" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES300_AndereErtraege" fref="204" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_MietwertLandi" fref="205" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_DebitorenEnde" fref="206" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_UebertragArbeiten" fref="207" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_DebitorenAnfang" fref="208" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_AngefArbeiten" fref="209" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_MwSt" fref="210" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_TotalUmsatz" fref="211" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_ZahlungenWaren" fref="212" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_WarenschuldenEnde" fref="213" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_WarenschuldenAnfang" fref="214" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_WarenlagerAnfang" fref="215" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_UebertragWarenlager" fref="216" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_TierbestandAnfang" fref="217" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_TierbestandEnde" fref="218" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_Warenaufwand" fref="219" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_Warenaufwand2" fref="219" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES300_TotalGewinnBrutto" fref="220" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<!-- page 4 -->
+			<integer source="SES400_TotalGewinnBruttoUbertrag" fref="221" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Loehne" fref="222" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_NaturalLoehne" fref="223" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AHVInhaber" fref="224" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AHVPersonal" fref="225" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_LaufendeBeitraege" fref="226" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Saeule2Personal" fref="227" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_KrankPraemien" fref="228" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Mietzins" fref="229" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Mietwert" fref="230" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Pachtzins" fref="231" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_PachtzinsPrivatanteil" fref="232" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES400_AufwandLeasingArt" fref="233" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES400_AufwandLeasing" fref="233" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Abschreibungen" fref="234" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_FZKosten" fref="235" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES400_MarkeFZ1" fref="236" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES400_PreisFZ1" fref="236" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<string source="SES400_MarkeFZ2" fref="237" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</string>
+			<integer source="SES400_PreisFZ2" fref="237" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AnteilPrivatFZ" fref="238" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AndereUnkosten" fref="239" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AndereUnkostenAnteilPriv" fref="240" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_KreditorenEnde" fref="241" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_KreditorenAnfang" fref="242" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_TotalEinkommen" fref="243" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_AbzugBeteiligungen" fref="244" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_RealStilleReservVorjahr" fref="245" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_Liquidationsgewinn" fref="246" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<integer source="SES400_EinkommenSteuerbar" fref="247" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</integer>
+			<boolean source="SES400_UnkostenOhne" fref="250" seq="1">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+			<boolean source="SES400_PrivatentnahmenOhne" fref="250" seq="2">
+				<condition>!SES100_BuchhKaufm</condition>
+			</boolean>
+		</formInfo>
+		<formInfo identification="335" description="Betriebsvermögen" source="">
+			<!-- page 5 header -->
+			<string source="SES100_OrtGeschaeft" fref="10" seq="1" />
+			<string source="SES100_Name" fref="11" seq="1" />
+			<string source="SES100_Vorname" fref="12" seq="1" />
+			<!-- page 5 -->
+			<integer source="SES500_Betriebseinrichtung" fref="300" seq="1" />
+			<integer source="SES500_Fahrzeuge" fref="301" seq="1" />
+			<integer source="SES500_Betriebsvermoegen" fref="302" seq="1" />
+			<integer source="SES500_Warenlager" fref="303" seq="1" />
+			<integer source="SES500_ReserveWarenlager" fref="304" seq="1" />
+			<integer source="SES500_TotalWarenlager" fref="304" seq="2" />
+			<integer source="SES500_AngefArbeiten" fref="305" seq="1" />
+			<integer source="SES500_RechAbgrenz" fref="306" seq="1" />
+			<integer source="SES500_Debitoren" fref="307" seq="1" />
+			<integer source="SES500_Delkredere" fref="308" seq="1" />
+			<integer source="SES500_TotalForderungen" fref="308" seq="2" />
+			<integer source="SES500_Kasse" fref="309" seq="1" />
+			<integer source="SES500_Tierbestand" fref="310" seq="1" />
+			<string source="SES500_WeiteresArt" fref="311" seq="1" />
+			<integer source="SES500_WeiteresVermoegen" fref="311" seq="2" />
+			<integer source="SES500_TotalBetriebsverm" fref="312" seq="1" />
+			<integer source="SES500_BarbezuegeSoll" fref="320" seq="1" />
+			<integer source="SES500_NaturalbezuegeAnz" fref="321" seq="1" />
+			<integer source="SES500_NaturalbezuegeAnzKinder" fref="321" seq="2" />
+			<integer source="SES500_NaturalbezuegeSoll" fref="321" seq="3" />
+			<integer source="SES500_PrivFahrzeugSoll" fref="322" seq="1" />
+			<integer source="SES500_PrivUebrigeSoll" fref="323" seq="1" />
+			<integer source="SES500_MietwertSoll" fref="324" seq="1" />
+			<integer source="SES500_SteuerSoll" fref="325" seq="1" />
+			<integer source="SES500_SteuernHaben" fref="325" seq="2" />
+			<integer source="SES500_VersichSoll" fref="326" seq="1" />
+			<integer source="SES500_VersichHaben" fref="326" seq="2" />
+			<integer source="SES500_Saeule3aSoll" fref="327" seq="1" />
+			<integer source="SES500_Saeule3aHaben" fref="327" seq="2" />
+			<string source="SES500_SonstEntnahmenArt" fref="328" seq="1" />
+			<integer source="SES500_SonstEntnahmenSoll" fref="328" seq="2" />
+			<integer source="SES500_NaturalloehneAnz" fref="329" seq="1" />
+			<integer source="SES500_NaturalloehneHaben" fref="329" seq="2" />
+			<string source="SES500_EinlagenPrivArt" fref="330" seq="1" />
+			<integer source="SES500_EinlagenPrivHaben" fref="330" seq="2" />
+			<string source="SES500_SonstGutschriftenArt" fref="331" seq="1" />
+			<integer source="SES500_SonstGutschriftenHaben" fref="331" seq="2" />
+			<integer source="SES500_TotalPrivSoll" fref="332" seq="1" />
+			<integer source="SES500_TotalPrivHaben" fref="332" seq="2" />
+			<!-- page 6 -->
+			<integer source="SES600_BuchwertBE" fref="340" seq="1" />
+			<integer source="SES600_AnschaffBE" fref="341" seq="1" />
+			<integer source="SES600_VerkaeufeBE" fref="342" seq="1" />
+			<integer source="SES600_WertVorAbschrBE" fref="343" seq="1" />
+			<integer source="SES600_AbschrOrdBE" fref="344" seq="1" />
+			<integer source="SES600_AbschrSofortBE" fref="345" seq="1" />
+			<integer source="SES600_AbschrEinmaligBE" fref="346" seq="2" />
+			<integer source="SES600_WertBE" fref="347" seq="1" />
+			<integer source="SES600_BuchwertFZ" fref="340" seq="2" />
+			<integer source="SES600_AnschaffFZ" fref="341" seq="2" />
+			<integer source="SES600_VerkaeufeFZ" fref="342" seq="2" />
+			<integer source="SES600_WertVorAbschrFZ" fref="343" seq="2" />
+			<integer source="SES600_AbschrOrdFZ" fref="344" seq="2" />
+			<integer source="SES600_AbschrSofortFZ" fref="345" seq="2" />
+			<integer source="SES600_AbschrEinmaligFZ" fref="346" seq="2" />
+			<integer source="SES600_WertFZ" fref="347" seq="2" />
+			<integer source="SES600_BuchwertUeB" fref="340" seq="3" />
+			<integer source="SES600_AnschaffUeB" fref="341" seq="3" />
+			<integer source="SES600_VerkaeufeUeB" fref="342" seq="3" />
+			<integer source="SES600_WertVorAbschrUeB" fref="343" seq="3" />
+			<integer source="SES600_AbschrOrdUeB" fref="344" seq="3" />
+			<integer source="SES600_AbschrSofortUeB" fref="345" seq="3" />
+			<integer source="SES600_AbschrEinmaligUeB" fref="346" seq="3" />
+			<integer source="SES600_WertUeB" fref="347" seq="3" />
+			<integer source="SES600_UnbewBuchwertBE" fref="350" seq="1" />
+			<integer source="SES600_UnbewAnschaffBE" fref="351" seq="1" />
+			<integer source="SES600_UnbewVerkaeufeBE" fref="352" seq="1" />
+			<integer source="SES600_UnbewWertVorAbschrBE" fref="353" seq="1" />
+			<integer source="SES600_UnbewAbschrOrdBE" fref="354" seq="1" />
+			<integer source="SES600_UnbewAbschrSofortBE" fref="355" seq="1" />
+			<integer source="SES600_UnbewAbschrEinmaligBE" fref="356" seq="1" />
+			<integer source="SES600_UnbewWertBE" fref="357" seq="1" />
+			<integer source="SES600_UnbewBuchwertFZ" fref="350" seq="2" />
+			<integer source="SES600_UnbewAnschaffFZ" fref="351" seq="2" />
+			<integer source="SES600_UnbewVerkaeufeFZ" fref="352" seq="2" />
+			<integer source="SES600_UnbewWertVorAbschrFZ" fref="353" seq="2" />
+			<integer source="SES600_UnbewAbschrOrdFZ" fref="354" seq="2" />
+			<integer source="SES600_UnbewAbschrSofortFZ" fref="355" seq="2" />
+			<integer source="SES600_UnbewAbschrEinmaligFZ" fref="356" seq="2" />
+			<integer source="SES600_UnbewWertFZ" fref="357" seq="2" />
+			<integer source="SES600_UnbewBuchwertUeB" fref="350" seq="3" />
+			<integer source="SES600_UnbewAnschaffUeB" fref="351" seq="3" />
+			<integer source="SES600_UnbewVerkaeufeUeB" fref="352" seq="3" />
+			<integer source="SES600_UnbewWertVorAbschrUeB" fref="353" seq="3" />
+			<integer source="SES600_UnbewAbschrSofortUeB" fref="355" seq="3" />
+			<integer source="SES600_UnbewAbschrEinmaligUeB" fref="356" seq="3" />
+			<integer source="SES600_UnbewWertUeB" fref="357" seq="3" />
+			<string source="SES600_BezLieg1" fref="360" seq="1" />
+			<integer source="SES600_TotAbschreibBeginnLieg1" fref="361" seq="1" />
+			<integer source="SES600_AbschreibImJahrLieg1" fref="362" seq="1" />
+			<integer source="SES600_TotAbschreibLieg1" fref="363" seq="1" />
+			<string source="SES600_BezLieg2" fref="360" seq="2" />
+			<integer source="SES600_TotAbschreibBeginnLieg2" fref="361" seq="2" />
+			<integer source="SES600_AbschreibImJahrLieg2" fref="362" seq="2" />
+			<integer source="SES600_TotAbschreibLieg2" fref="363" seq="2" />
+			<string source="SES600_BezLieg3" fref="360" seq="3" />
+			<integer source="SES600_TotAbschreibBeginnLieg3" fref="361" seq="3" />
+			<integer source="SES600_AbschreibImJahrLieg3" fref="362" seq="3" />
+			<integer source="SES600_TotAbschreibLieg3" fref="363" seq="3" />
+		</formInfo>
+		<formInfo identification="070" description="Liquidationsgewinn" source="">
+			<!-- page 9 -->
+			<integer source="SES900_RealStilleReservLiquidJahr" fref="10" seq="1" />
+			<integer source="SES900_AufwandRealisierung2" fref="11" seq="1" />
+			<integer source="SES900_RealStilleReservTotal" fref="12" seq="1" />
+			<integer source="SES900_AnteiligeLiquidKosten" fref="20" seq="1" />
+			<integer source="SES900_VerlustvortragVorjahre" fref="21" seq="1" />
+			<integer source="SES900_VerlustDiesesJahr" fref="22" seq="1" />
+			<integer source="SES900_Ueberhang2a" fref="23" seq="1" />
+			<integer source="SES900_LiquidationsgewinnVorAHV" fref="24" seq="1" />
+			<integer source="SES900_AHVAufLiquidationsgewinn" fref="25" seq="1" />
+			<integer source="SES900_Liquidationsgewinn" fref="26" seq="1" />
+			<integer source="SES900_EinkommenVorjahreDurchschnitt" fref="30" seq="1" />
+			<integer source="SES900_Altersgutschriftensatz" fref="31" seq="1" />
+			<integer source="SES900_AnzahlJahre" fref="32" seq="1" />
+			<integer source="SES900_FiktiverEinkaufBrutto" fref="33" seq="1" />
+			<integer source="SES900_FiktiverEinkaufZwischentotal" fref="35" seq="1" />
+			<integer source="SES900_FiktiverEinkaufTotal" fref="35" seq="2" />
+			<integer source="SES900_RestlicherLiquidationsgewinn" fref="36" seq="1" />
+			<integer source="SES900_Vorsorgeguthaben" fref="37" seq="1" />
+			<integer source="SES900_FruehereBezuege3a" fref="38" seq="1" />
+			<integer source="SES900_Guthaben3a" fref="39" seq="1" />
+			<integer source="SES900_AbzueglichKleine3a" fref="39" seq="2" />
+			<integer source="SES900_Saeule3aZwischentotal" fref="40" seq="1" />
+			<integer source="SES900_KapitalisierteRente" fref="41" seq="1" />
+		</formInfo>
+	</formInfoList>
+
+	<!-- formset W -->
+	<formInfo identification="100" description="Wertschriftenverzeichnis" source="">
+		<boolean source="wizardProfileHasInheritancesReceived" fref="30" seq="2" />
+		<boolean source="wizardProfileHasInheritancesUndistributed" fref="40" seq="2" />
+		<boolean source="wizardProfileHasDonationsReceived" fref="50" seq="2" />
+		<boolean source="wizardProfileHasDonationsPaid" fref="60" seq="2" />
+		<boolean source="wizardProfileHasInheritanceAdvancedReceived" fref="76" seq="2" />
+		<boolean source="wizardProfileHasInheritanceAdvancedPaid" fref="77" seq="2" />
+
+		<integer source="WVS1_TotalErb" fref="75" seq="1" />
+		<integer source="WVS1_TotalErhSchenkung" fref="75" seq="2" />
+		<integer source="WVS1_TotalGemSchenkung" fref="75" seq="3" />
+		<integer source="totalUndistributedInheritance" fref="75" seq="4" />
+		
+		<table source="WV2_BarcodeMerge" fieldCounterStart="1">
+			<string source="WVS2_VermArtBC" fref="200" seq="1" />
+			<string source="WVS2_OwnerBC" fref="200" seq="2" />
+			<string source="WVS2_CurrencyBC" fref="200" seq="3" />
+			<string source="WVS2_ValorKindBC" fref="200" seq="4" />
+			<float source="WVS2_InterestBC" fref="200" seq="5" maxFractionDigits="3" />
+			<float source="WVS2_NennwertBC" fref="200" seq="6" />
+			<string source="WVS2_BezeichnungBC" fref="200" seq="7" />
+			<string source="WVS2_KontoNumberBC" fref="200" seq="8" />
+			<string source="WVS2_ValNummerBC" fref="200" seq="9" />
+			<date source="WVS2_DatumKaufBC" fref="200" seq="10" />
+			<date source="WVS2_DatumVerkaufBC" fref="200" seq="11" />
+			<float source="WVS2_ProzentStkBC" fref="200" seq="12" minFractionDigits="3" maxFractionDigits="3"/>
+			<integer source="WVS2_SteuerwertBC" fref="200" seq="13" />
+			<integer source="WVS2_BruttoertragABC" fref="200" seq="14" />
+			<integer source="WVS2_BruttoertragBBC" fref="200" seq="15" />
+			<integer source="WVS2_KurslistenMarkIntBC" fref="200" seq="16" />
+			<integer source="WVS2_VVKBC" fref="200" seq="17" />
+			<string source="WVS2_IsinBC" fref="200" seq="18" />
+		</table>
+		<integer source="WVS3_Steuerwert" fref="300" seq="1" />
+		<integer source="WVS3_ErtragA" fref="301" seq="1" />
+		<integer source="WVS3_ErtragB" fref="302" seq="1" />
+		<integer source="WVS3_UebertragEGErtrag" fref="303" seq="1" />
+		<integer source="DA1_TotSteuerwert" fref="304" seq="1" />
+		<integer source="DA1_TotBruttoertrag" fref="306" seq="1" />
+		<integer source="WVS3_TotalErtragA" fref="307" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</integer>
+		<integer source="WVS3_TotalErtragB" fref="308" seq="1" />
+		<integer source="WV3_VerwKostenArtAsInteger" fref="309" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</integer>
+		<integer source="WVS3_AbzVermVerwKosten" fref="310" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</integer>
+		<integer source="WVS3_AbzEinsatzLotterie" fref="311" seq="1" />
+		<integer source="WVS3_AbzUebertragEGErtrag" fref="312" seq="1" />
+		<integer source="WVS3_ZwischenTotErtrag" fref="313" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</integer>
+		<integer source="WVS3_BeteiligungsAbzug" fref="314" seq="1" />
+		<integer source="WVS3_TotalSteuerwert" fref="315" seq="1" />
+		<integer source="WVS3_VerrechnungSteuer" fref="316" seq="1" />
+		<integer source="WVS3_TotalErtrag" fref="317" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</integer>
+		<integer source="WVS3_TotSteuerwertGM" fref="350" seq="1" />
+		<integer source="WVS3_TotErtragGM" fref="351" seq="1" />
+		<integer source="WVS3_TotSteuerwertGF" fref="352" seq="1" />
+		<integer source="WVS3_TotErtragGF" fref="353" seq="1" />
+		<integer source="WVS3_GesellschErtrag" fref="355" seq="1" />
+
+		<string source="WVS4_IBAN" fref="97" seq="1" />
+		<string source="WVS4_Bank" fref="98" seq="1" />
+		<string source="WVS4_BankAccountOwner" fref="99" seq="1" />
+		<string source="WVS4_BuergerUsaAsString" fref="86" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</string>
+		<string source="wizardProfileSecuritiesUsCitizen" fref="87" seq="1">	<!-- this is technically a boolean -->
+			<condition>wizardProfileSecuritiesUsCitizen</condition>
+		</string>
+		<string source="WVS4_LetzteSteuern" fref="88" seq="1">
+			<condition>wizardProfileSecuritiesUsCitizen</condition>
+		</string>
+		<string source="WVS4_Direktor" fref="89" seq="1">
+			<condition>wizardProfileSecuritiesUsCitizen</condition>
+		</string>
+		<boolean source="WVS4_Beiblaetter" fref="94" seq="1" />
+		<boolean source="WVS4_SteuerrueckUSA" fref="95" seq="1">
+			<condition>WVS1_PrintIt</condition>
+		</boolean>
+		<boolean source="WVS4_Bankabrechnung" fref="96" seq="1" />
+	</formInfo>
+
+	<!-- formset DA -->
+	<formInfo identification="430" description="Antrag auf pauschale Steueranrechnung für ausländische Dividenden und Zinsen (DA-1)" source="">
+		<table source="securityList_FormDA" fieldCounterStart="1">
+			<string source="securityFormDA_Kind" fref="400" seq="1" />
+			<string source="securityFormDA_ShortInfo" fref="400" seq="2" />
+			<string source="securityFormDA_ValorNumber" fref="400" seq="3" />
+			<float source="securityFormDA_FaceValueQuantity" fref="400" seq="6" />
+			<integer source="securityFormDA_TaxValueEndOfYear" fref="400" seq="7" />
+			<integer source="securityFormDA_GrossRevenue" fref="400" seq="8" />
+			<integer source="securityFormDA_RevenueFlatRateTaxChargingPercentage" fref="400" seq="9" />
+			<integer source="securityFormDA_RevenueFlatRateTaxCharging" fref="400" seq="10" />
+			<integer source="securityFormDA_TaxSecureUSA" fref="400" seq="11" />
+			<date source="securityFormDA_Issue" fref="400" seq="4" />
+			<date source="securityFormDA_Redemption" fref="400" seq="5" />
+			<integer source="securityFormDA_isDBEntryAsInteger" fref="400" seq="12" />
+			<string source="securityFormDA_Isin" fref="400" seq="13" />
+		</table>
+		<integer source="DA1_TotSteuerrueckUeber" fref="450" seq="4" />
+		<integer source="DA1_TotSteueranrechUeber" fref="450" seq="3" />
+		<integer source="DA1_TotBruttoertragUeber" fref="450" seq="2" />
+		<integer source="DA1_TotSteuerwertUeber" fref="450" seq="1" />
+		<integer source="DA1_TotSteuerwert" fref="450" seq="5" />
+		<integer source="DA1_TotBruttoertrag" fref="450" seq="6" />
+		<integer source="DA1_TotSteueranrech" fref="450" seq="7" />
+		<integer source="DA1_TotSteuerrueck" fref="450" seq="8" />
+	</formInfo>
+
+	<!-- these will only be inserted into the scantax xml if the the taxDeclaration is submitted online  -->
+	<formInfo identification="000" description="Vertretungsvollmacht" source="">
+		<boolean source="STES1_HatVertreter" bref="0" fref="46901" seq="0">
+			<condition>wizardOnlineSubmission &amp; STES1_HatVertreter &amp; (STES1_BekannterVertreter != true)</condition>
+		</boolean>
+	</formInfo>
+	<formInfo identification="491" description="Bemerkungen" source="">
+		<boolean source="hasFormCommentary" bref="0" fref="46904" seq="0">
+			<condition>wizardOnlineSubmission &amp; hasFormCommentary</condition>
+		</boolean>
+	</formInfo>
+	<formInfo identification="811" description="Merkblatt Zahlungserleichterung" source="">
+		<boolean source="hasAnnexAccomodationOfPayment" bref="0" fref="46902" seq="0">
+			<condition>wizardOnlineSubmission &amp; hasAnnexAccomodationOfPayment</condition>
+		</boolean>
+	</formInfo>
+</scantax>
