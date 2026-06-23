@@ -33,7 +33,7 @@ const jsonValueSchema: z.ZodType<JsonValue> = z.lazy(() => z.union([
 ]));
 
 export function createMcpServer(dependencies: ServerDependencies = {}): McpServer {
-  const server = new McpServer({ name: "luzern-tax-mcp", version: "0.1.0" });
+  const server = new McpServer({ name: "luzern-etax-mcp", version: "0.1.0" });
   const handlers = createToolHandlers(dependencies);
 
   server.registerTool(
@@ -232,7 +232,7 @@ async function main(): Promise<void> {
   createServer((request, response) => {
     void transport.handleRequest(request, response);
   }).listen(port, host, () => {
-    console.error(`Luzern Tax MCP listening on http://${host}:${port}/mcp`);
+    console.error(`Luzern eTax MCP listening on http://${host}:${port}/mcp`);
   });
 }
 

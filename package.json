@@ -1,7 +1,8 @@
 {
-  "name": "luzern-tax-mcp",
+  "name": "luzern-etax-mcp",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "start": "tsx src/server.ts",

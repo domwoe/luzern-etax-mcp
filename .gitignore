@@ -2,3 +2,4 @@
 .claude/settings.local.json
 test-import/*.lunp2024
 node_modules/
+docs/
